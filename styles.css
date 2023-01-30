@@ -1,0 +1,283 @@
+body {
+    margin: 0;
+    font-family: "Varela Round";
+    overflow-x: hidden;
+}
+
+header {
+    min-height: 200px;
+    background-image: url(fondolanding.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    width: 100px;
+}
+
+.oferta {
+    background: #029097;
+    color: white;
+    min-height: 100px;
+    text-align: center;
+    padding: 10px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.appcarta {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(fondo6eter.png);
+    background-size: cover;
+}
+
+.appcarta div{
+        padding: 10px;
+        margin: 10px;
+        width: 50%;
+       
+}
+
+.plan {
+  border-radius: 30px;
+  border: 1px solid grey
+  
+}
+
+.plan .caja-beneficios{
+  padding: 10px;
+}
+
+ .plan .caja-beneficios img{
+    width: 30px;
+}
+
+
+
+.modelos {
+    /* margin: 10px; */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-image: url(fondo1000.png); */
+    /* background-size: contain; */
+    /* background-color: #029097; */
+}
+
+.modelo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+}
+
+.modelo img {
+    width: 200px;
+}
+
+.modelo span{
+  background: white;
+  color: black;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px 6px white;
+  padding: 10px;
+}
+
+.plan {
+  position: relative;
+}
+
+.plan #precio {
+  position: absolute;
+    top: 0;
+    right: 0;
+    background: orange;
+    padding: 10px;
+    border-radius: 30px;
+    color: white;
+}
+
+.plan #demo:hover {
+  background-color: #30EDCA;
+  box-shadow: 0px 0px 10px 6px #30EDCA;
+  font-size: 25px;
+}
+
+.video {
+    background-image: url(fondo7eter.png);
+    background-size: cover;
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+.video button{
+    border: none;
+    border-radius: 30px;
+    background: #029097;
+    color: white;
+    font-size: 19px;
+    padding: 10px;
+    width: 50%;
+    cursor: pointer;
+    margin: 1px auto -40px;
+    display: block;
+    
+}
+
+.video .buttom-box {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.preguntas {
+    display: flex; 
+    padding: 10px;
+    /* margin : 10px; */
+    width: 500%;
+    background: #029097;
+    color: white;
+}
+
+.preguntas input[type='text']{
+  font-size: 20px;
+  padding: 10px;
+  margin: auto;
+  border-radius: 30px;
+  width: 90%;
+
+}
+
+.pregunta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    width: 100%;
+}
+
+.pregunta button{
+    background: #30EDCA;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.opciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.opciones input[type="radio"] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* IMAGE STYLES */
+.opciones input[type="radio"] + img {
+    cursor: pointer;
+  }
+  
+  /* CHECKED STYLES */
+  .opciones input[type="radio"]:checked + img {
+    outline: 2px solid #029097;
+  }
+
+  .opciones img{
+    width: 100px;
+  }
+
+  .opciones .whatsapp:hover .seleccion{
+    display: block!important;
+  }
+
+  .opciones .llamada:hover .seleccion{
+    display: block!important;
+  }
+
+  .opciones .email:hover .seleccion{
+    display: block!important;
+  }
+
+  .seleccion{
+    background-color: #029097;
+    padding: 10px;
+  }
+
+  .seleccion a{
+    color: white; 
+    text-decoration: none;
+  }
+
+  .seleccion a:hover{
+    text-decoration: underline;
+  }
+
+  .seleccion span{
+    color: white; 
+    text-decoration: none;
+  }
+
+  .seleccion span:hover{
+    text-decoration: underline;
+  }
+
+  .reviews {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .review{
+    box-shadow: 0px 0px 10px 6px gainsboro;
+    max-width: 200px;
+    border-radius: 30px;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .box-video{
+    position: relative;
+  }
+
+@media (max-width: 850px) {
+    .modelos .modelo img {
+      width: 120px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .oferta {
+      text-align: left;
+    }
+
+    .oferta h1, .oferta h2 {
+      width: 70%;
+      margin: 10px;
+    }
+
+    .modelos img{
+        width: 90px!important;
+    }
+    .modelo span{
+      font-size: 8px;
+    }
+  }
