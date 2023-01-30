@@ -17,7 +17,7 @@
 </head>
 <body>
     <!-- <header>
-        <img data-aos="zoom-in" src="etersystem.png">
+       Holaaaaaaaaaaaaaaaaaaaaaaa
     </header> -->
     <section class="oferta">
         <img src="AppCarta.png" style="width: 150px;">
@@ -244,9 +244,11 @@
   const preguntas = document.getElementById('preguntas');
   const pregunta01 = document.getElementById('pregunta01');
   const buttom01 = document.getElementById('nombre');
+  const body = document.querySelector('body');
   buttom01.addEventListener('click', function(){
     pregunta01.style.display = "none";
     preguntas.style.width = "400%";
+    body.style.overflowX = 'hidden';
   })
 
   const pregunta02 = document.getElementById('pregunta02');
