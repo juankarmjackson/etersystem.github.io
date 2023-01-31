@@ -51,25 +51,25 @@
     </section> -->
     <!-- <h1 style="text-align: center; background-color: #029097;" data-aos="zoom-out-down">Modelos de Carta</h1> -->
     <section class="modelos">
+        <div class="modelo"  data-aos="fade-left" style="background : #F9C5D0; color: black;">
+            <p>Modos de Vista </p>
+            <img src="mocukup13.gif">
+        </div>
+        <div class="modelo"  data-aos="fade-right" style="background: #BD1956; color: white;">
+            <p>Alertas </p>
+            <img src="mockup10.gif">
+        </div>
+        <div class="modelo"  data-aos="fade-left" style="background : #99D5D9; color: white;">
+            <p>Multi idiomas </p>
+            <img src="mockup11.gif">
+        </div>
         <div class="modelo"  data-aos="fade-right" style="background: #263036; color: white">
             <p>Administración y Control </p>
             <img src="mockup07.gif">
         </div>
-        <div class="modelo"  data-aos="fade-left" style="background: #BD1956; color: white;">
-            <p>Alertas </p>
-            <img src="mockup10.gif">
-        </div>
-        <div class="modelo"  data-aos="fade-right" style="background : #99D5D9; color: white;">
-            <p>Multi idiomas </p>
-            <img src="mockup11.gif">
-        </div>
-        <div class="modelo"  data-aos="fade-left" style="background : #F9C5D0; color: black;">
-            <p>Modo de Vista </p>
-            <img src="mocukup13.gif">
-        </div>
     </section>
     <section class="video">
-        <h2 data-aos="zoom-out-down" style="font-size: 20px; text-align: center; width: 90%; margin: auto;">Descubre el Sistema de Carta Digital Más Completa , Versátil y Sencilla Del Mercado</h2>
+        <h2 data-aos="zoom-out-down" class="title-video" style="display: flex; justify-content: center; align-items: center; font-size: 30px; text-align: center; width: 90%; margin: auto;">Descubre el Sistema de Carta Digital Más Completa , Versátil y Sencilla Del Mercado</h2>
             <div class="box-video">
                 <video controls="no" id="video"  style="width: 90%; margin: 10px auto; max-width: 650px; display: flex; justify-content: center; align-items: center; box-shadow: 0px 0px 10px 6px #029097; opacity: 0;">
                 <source src="appcarta.mp4" type="video/mp4">
@@ -101,8 +101,10 @@
     </section>
 
     <section class="reunion" style="display:none"  id="formularioInteresado">
-        <h1 style="text-align: center;width: 90%; margin: auto;">Nos ponemos en contacto contigo 🤗</h1>
+        <div class="contacto-empresa" style="min-height: 100px;">
+            <h1 style="text-align: center;width: 90%; margin: auto;">Nos ponemos en contacto contigo 🤗</h1>
         <p style="text-align: center;width: 90%; margin: auto;">Te llamamos para explicarte con todo detalle el proceso a seguir para tener Tu Propia App Carta</p>
+        </div>
         <div class="preguntas" id="preguntas">
             <div class="pregunta" id="pregunta01">
                 <div>
@@ -231,6 +233,20 @@
 
     </section>
     <section class="reviews">
+        <div class="izquierda" id="izquierda">
+            <i class="fa-regular fa-left"><</i>
+        </div>
+        <div class="review">
+            <div>
+            <img src="cliente.png">
+            <div>
+                <span>⭐⭐⭐⭐⭐</span><br>
+                <span class="cliente">Victor de @Shishamesse</span><br>
+                <span class="empresa">Tienda de Cachimbas</span><br>
+            </div>
+            </div>
+            <p>Una experiencia brutal, nos encantó</p>
+        </div>
         <div class="review">
             <div>
             <img src="cliente.png">
@@ -263,6 +279,20 @@
             </div>
             </div>
             <p>Una experiencia brutal, nos encantó</p>
+        </div>
+        <div class="review">
+            <div>
+            <img src="cliente.png">
+            <div>
+                <span>⭐⭐⭐⭐⭐</span><br>
+                <span class="cliente">Victor de @Shishamesse</span><br>
+                <span class="empresa">Tienda de Cachimbas</span><br>
+            </div>
+            </div>
+            <p>Una experiencia brutal, nos encantó</p>
+        </div>
+        <div class="derecha" id="derecha">
+            <i class="fa-regular fa-right">></i>
         </div>
     </section>
     <script src="confetti.min.js"></script>
@@ -385,12 +415,12 @@
   imagen.addEventListener('click', (event) => {
     video.play();
     imagen.style.display = 'none';
-    videoPrincipal.style.opacity = "0";
+    videoPrincipal.style.opacity = "1";
 });
 
 video.addEventListener('pause', (event) => {
   imagen.style.display = 'block';
-  videoPrincipal.style.opacity = "0";
+  videoPrincipal.style.opacity = "1";
 });
  
 
