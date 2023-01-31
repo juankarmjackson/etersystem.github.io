@@ -51,27 +51,27 @@
     </section> -->
     <!-- <h1 style="text-align: center; background-color: #029097;" data-aos="zoom-out-down">Modelos de Carta</h1> -->
     <section class="modelos">
-        <div class="modelo">
-            <!-- <span>EN BLOQUE</span> -->
-            <img src="4.gif">
+        <div class="modelo"  data-aos="fade-right" style="background: #263036; color: white">
+            <p>Administración y Control </p>
+            <img src="mockup07.gif">
         </div>
-        <div class="modelo">
-        <!-- <span>EN BLOQUE</span> -->
-            <img src="3.gif">
+        <div class="modelo"  data-aos="fade-left" style="background: #BD1956; color: white;">
+            <p>Alertas </p>
+            <img src="mockup10.gif">
         </div>
-        <div class="modelo">
-        <!-- <span>EN BLOQUE</span> -->
-            <img src="2.gif">
+        <div class="modelo"  data-aos="fade-right" style="background : #99D5D9; color: white;">
+            <p>Multi idiomas </p>
+            <img src="mockup11.gif">
         </div>
-        <div class="modelo">
-        <!-- <span>EN LÍNEA</span> -->
-            <img src="1.gif">
+        <div class="modelo"  data-aos="fade-left" style="background : #F9C5D0; color: black;">
+            <p>Modo de Vista </p>
+            <img src="mocukup13.gif">
         </div>
     </section>
     <section class="video">
-        <h2 data-aos="zoom-out-down" style="font-size: 25px; text-align: center; width: 90%; margin: auto;">Descubre el Sistema de Carta Digital Más Completa , Versátil y Sencilla Del Mercado</h2>
+        <h2 data-aos="zoom-out-down" style="font-size: 20px; text-align: center; width: 90%; margin: auto;">Descubre el Sistema de Carta Digital Más Completa , Versátil y Sencilla Del Mercado</h2>
             <div class="box-video">
-                <video controls="no"  style="width: 90%; margin: 10px auto; max-width: 650px; display: flex; justify-content: center; align-items: center; box-shadow: 0px 0px 10px 6px #029097;">
+                <video controls="no" id="video"  style="width: 90%; margin: 10px auto; max-width: 650px; display: flex; justify-content: center; align-items: center; box-shadow: 0px 0px 10px 6px #029097; opacity: 0;">
                 <source src="appcarta.mp4" type="video/mp4">
                 </video>
                 <img src="reproducir.png" id="imagenVideo" style="display: none;width: 100%; position: absolute; top: 0; height: 100%; border-radius: 30px; cursor: pointer;">
@@ -213,27 +213,43 @@
                 <img src="">
             </div>
     </section>
+    <section class="logos-clientes">
+
+    </section>
     <section class="reviews">
-            <div class="review">
-                <div>
-                <img src="">
-                <div>
-                    <span>Victor de @Shishamesse</span>
-                    <span>Tienda de Cachimbas</span>
-                </div>
-                </div>
-                <p>Una experiencia brutal, nos encantó</p>
+        <div class="review">
+            <div>
+            <img src="cliente.png">
+            <div>
+                <span>⭐⭐⭐⭐⭐</span><br>
+                <span class="cliente">Victor de @Shishamesse</span><br>
+                <span class="empresa">Tienda de Cachimbas</span><br>
             </div>
-            <div class="review">
-                <div>
-                <img src="">
-                <div>
-                    <span>Victor de @Shishamesse</span>
-                    <span>Tienda de Cachimbas</span>
-                </div>
-                </div>
-                <p>Una experiencia brutal, nos encantó</p>
             </div>
+            <p>Una experiencia brutal, nos encantó</p>
+        </div>
+        <div class="review">
+            <div>
+            <img src="cliente.png">
+            <div>
+                <span>⭐⭐⭐⭐⭐</span><br>
+                <span class="cliente">Victor de @Shishamesse</span><br>
+                <span class="empresa">Tienda de Cachimbas</span><br>
+            </div>
+            </div>
+            <p>Una experiencia brutal, nos encantó</p>
+        </div>
+        <div class="review">
+            <div>
+            <img src="cliente.png">
+            <div>
+                <span>⭐⭐⭐⭐⭐</span><br>
+                <span class="cliente">Victor de @Shishamesse</span><br>
+                <span class="empresa">Tienda de Cachimbas</span><br>
+            </div>
+            </div>
+            <p>Una experiencia brutal, nos encantó</p>
+        </div>
     </section>
     <script src="confetti.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -325,9 +341,11 @@
 
   const video = document.querySelector('video');
   const imagen2 = document.getElementById('imagenPlay');
+  const videoPrincipal = document.getElementById('video');
   imagen2.addEventListener('click', (event) => {
     video.play();
     imagen2.style.display = 'none';
+    videoPrincipal.style.opacity = '1';
 });
 
   
@@ -336,10 +354,12 @@
   imagen.addEventListener('click', (event) => {
     video.play();
     imagen.style.display = 'none';
+    videoPrincipal.style.opacity = "0";
 });
 
 video.addEventListener('pause', (event) => {
   imagen.style.display = 'block';
+  videoPrincipal.style.opacity = "0";
 });
  
 
