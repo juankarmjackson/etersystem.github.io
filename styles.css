@@ -108,14 +108,6 @@ header img {
     margin: 10px;
 }
 
-.review img{
-  width: 100px;
-}
-
-.review .cliente{
-  font-size: 18px;
-  
-}
 
 .video button{
     border: none;
@@ -248,7 +240,24 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-direction: row;
+    position: relative;
+  }
+
+  .izquierda{
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    /* padding: 140px 10px;
+    backdrop-filter: blur(10px); */
+  }
+
+  .derecha{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    /* padding: 140px 10px;
+    backdrop-filter: blur(10px); */
   }
 
   .review{
@@ -256,6 +265,24 @@ header img {
     max-width: 200px;
     border-radius: 30px;
     margin: 10px;
+    padding: 10px;
+    width: 350px;
+  }
+
+  .review img{
+    width: 100px;
+  }
+  
+  .review .cliente{
+    font-size: 18px;
+    
+  }
+
+  .reviews i{
+    font-size: 25px;
+    background: #029097;
+    color: white;
+    border-radius: 30px;
     padding: 10px;
   }
 
@@ -266,9 +293,17 @@ header img {
   }
 
 @media (max-width: 850px) {
-    /* .modelos .modelo img {
-      width: 120px;
-    } */
+    .video .title-video{
+      font-size: 20px!important;
+    }
+
+  }
+
+  @media (min-width: 850px) {
+
+    .caja-beneficios span{
+      font-size: 20px!important
+    }
   }
 
   @media (max-width: 480px) {
