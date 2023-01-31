@@ -87,11 +87,12 @@ header img {
 .plan #precio {
   position: absolute;
     top: 0;
-    right: 0;
-    background: orange;
+    right: -40px;
+    /* background: orange; */
     padding: 10px;
     border-radius: 30px;
     color: white;
+    width: 125px;
 }
 
 .plan #demo:hover {
@@ -146,7 +147,7 @@ header img {
     display: flex; 
     padding: 10px;
     /* margin : 10px; */
-    width: 500%;
+    width: 100%;
     background: #029097;
     color: white;
 }
@@ -210,9 +211,9 @@ header img {
     display: block!important;
   }
 
-  .opciones .llamada:hover .seleccion{
+  /* .opciones .llamada:hover .seleccion{
     display: block!important;
-  }
+  } */
 
   .opciones .email:hover .seleccion{
     display: block!important;
