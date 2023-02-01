@@ -106,11 +106,23 @@
         <p style="text-align: center;width: 90%; margin: auto;">Te llamamos para explicarte con todo detalle el proceso a seguir para tener Tu Propia App Carta</p>
         </div>
         <div class="preguntas" id="preguntas">
-            <div class="pregunta" id="pregunta01">
+            <!-- <div class="pregunta" id="pregunta01">
                 <div>
                 <h3>Teléfono</h3>
-                <input type="text" placeholder="Escribe Aquí"><br>
+                <input type="text" placeholder="Escribe Aquí" id="valorTelefono"><br>
                 <button id="nombre">Continuar</button>
+                </div>
+            </div> -->
+            <!-- Grupo: Teléfono -->
+			<div id="formulario">
+                <div class="formulario__grupo" id="grupo__telefono" >
+                    <label for="telefono" class="formulario__label">Teléfono</label>
+                    <div class="formulario__grupo-input pregunta" id="pregunta01">
+                        <input type="text" class="formulario__input valorTelefono" name="telefono" id="telefono" placeholder="Tu Teléfono">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <button id="nombre">Continuar</button>
+                    <p class="formulario__input-error">Tu teléfono debe tener 9 dígitos: No pongas el código del país ni  espacios ni +34.</p>
                 </div>
             </div>
             <!-- <div class="pregunta" id="pregunta02">
@@ -185,8 +197,8 @@
                     <!-- <input type="radio" name="opcion" id="llamada" value="llamada"> -->
                     <img src="llamada.png">
                     <div  class="seleccion" style="text-align: left;">
-                        <div id="morning"><input type="checkbox" value="Por Las Mañanas"><span>Por Las Mañanas</span></div>
-                        <div id="tardes"><input type="checkbox" value="Por Las Tardes"><span>Por Las Tardes</span></div>
+                        <div id="morning"><input type="checkbox" id="valorMorning" value="Por Las Mañanas"><span>Por Las Mañanas</span></div>
+                        <div id="tardes"><input type="checkbox" id="valorTardes" value="Por Las Tardes"><span>Por Las Tardes</span></div>
                         <!-- <input type="checkbox" value="Por La Tarde Noche"><span>Por La Tarde Noche</span><br> -->
                     </div>
                     <p>Llamada</p>
@@ -371,6 +383,7 @@
 //   })
 
   const input6 = document.getElementById('nombre');
+  const valorInput = document.querySelector(".valorTelefono");
 //   const input7 = document.getElementById('no');
 //   const pregunta3 = document.getElementById('pregunta3');
   const reunion = document.getElementById('reunion');
@@ -381,6 +394,8 @@
     reunion.scrollIntoView();
     preguntas.style.display = "none";
     formularioInteresado.style.display = "none";
+    const valorTelefono = valorInput.value;
+    console.log(valorTelefono);
   })
 
 //   input7.addEventListener('click', function(){
@@ -408,11 +423,50 @@
   morning.addEventListener('click', function(){
     llamada.style.display = "none";
     gracias.style.display = "block";
+    const valorMorning = "Por La Mañana";
+    console.log(valorMorning);
+
+    $.ajax({
+        url: `https://api.localads.es/auth/register`,
+        type: 'POST',
+        async: false,
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+            "observation": valorMorning,
+            "phone": valorTelefono,
+        }),
+
+        success: function (data) {
+           console.log(data);
+        }
+
+    })
+
   })
 
   tardes.addEventListener('click', function(){
     llamada.style.display = "none";
     gracias.style.display = "block";
+    const valorTardes = "Por La Tarde";
+    console.log(valorTardes);
+
+    $.ajax({
+        url: `https://api.localads.es/auth/register`,
+        type: 'POST',
+        async: false,
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+            "observation": valorTardes,
+            "phone": valorTelefono,
+        }),
+
+        success: function (data) {
+           console.log(data);
+        }
+
+    })
   })
 
   // VIDEO PLAY
@@ -441,7 +495,51 @@ video.addEventListener('pause', (event) => {
 });
  
 
+// VALIDACION
 
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
+
+const expresiones = {
+	telefono: /^\d{9}$/ // 9 numeros.
+}
+
+const campos = {
+	telefono: false
+}
+
+const validarFormulario = (e) => {
+	switch (e.target.name) {
+		case "telefono":
+			validarCampo(expresiones.telefono, e.target, 'telefono');
+		break;
+	}
+}
+
+const validarCampo = (expresion, input, campo) => {
+	if(expresion.test(input.value)){
+		console.log(document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto'));
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		campos[campo] = true;
+	} else {
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos[campo] = false;
+	}
+}
+
+
+
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
 </script>
 </body>
 </html>
