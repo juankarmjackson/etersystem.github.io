@@ -19,10 +19,42 @@
     <!-- <header>
        Holaaaaaaaaaaaaaaaaaaaaaaa
     </header> -->
-    <section class="oferta">
+    <section class="encabezado">
+        <h1 style="font-size: 22px">SÓLO PARA QUIENES REALMENTE QUIEREN MEJORAR SU NEGOCIO</h1>
+        <div class="capa"></div>
+        <div class="primera-boton">
+            <img src="abajo.png" id="primera-boton">
+        </div>
+    </section>
+    <!-- <section class="oferta">
         <img src="AppCarta.png" style="width: 150px;">
         <h1>LA CARTA MÁS COMPLETA Y PERSONALIZADA DEL MERCADO</h1>
         <h2 style="font-size: 20px; font-style: italic;">+ de <span style="text-decoration: underline; font-size: 30px;">1200</span> Establecimientos se autogestionan con AppCarta</h2>
+    </section> -->
+    <section class="primera" id="primera">
+            <div class="primera-text">
+                <h2>Descubre porque más de 1200 establecimientos ya trabajan con AppCarta</h2>
+                <p>De Hosteleros para Hosteleros</p>
+
+                <br>
+                <p>Éter System nace de la necesidad de sacarle el máximo rendimiento tanto en
+                    la gestión, control y ofrecimiento.
+
+                    <br>
+                    Uno de nuestros fundadoes cuentan con más de 10 años de experiencia en el sector, teniendo su propio 
+                    establecimiento y con un Máster en Administración y Gestión de Empresas de Restauración, Food & Berengie.
+
+                    <br>
+                    Motivos por los cuales somos conscientes de primera mano de las dificultades y exigencias a los que enfrentáis en su día a día.
+
+                </p>
+            </div>
+            <div class="primera-imagen">
+                <img src="cliente.png" style="width: 350px">
+            </div>
+            <div class="primera-boton">
+                <img src="abajoblack.png">
+            </div>
     </section>
     <!-- <section class="appcarta">
         <div style="display: flex; justify-content: center; align-items: center;">
@@ -51,25 +83,33 @@
     </section> -->
     <!-- <h1 style="text-align: center; background-color: #029097;" data-aos="zoom-out-down">Modelos de Carta</h1> -->
     <section class="modelos">
-        <div class="modelo"  data-aos="fade-left" style="background : #F9C5D0; color: black;">
-            <p>Modos de Vista </p>
+        <div class="modelo"  data-aos="fade-left" style="background-image: url(1.png); background-size: cover;">
+            <div style="height: 100px; display: flex; justify-content: center; align-items: center;">
+                <span>Modos de Vista </span>
+            </div>
             <img src="mocukup13.gif">
         </div>
-        <div class="modelo"  data-aos="fade-right" style="background: #BD1956; color: white;">
-            <p>Alertas </p>
+        <div class="modelo"  data-aos="fade-right" style="background-image: url(2.png); background-size: cover;">
+            <div style="height: 100px; display: flex; justify-content: center; align-items: center;">
+                <span>Alertas </span>
+            </div>
             <img src="mockup10.gif">
         </div>
-        <div class="modelo"  data-aos="fade-left" style="background : #99D5D9; color: white;">
-            <p>Multi idiomas </p>
+        <div class="modelo"  data-aos="fade-left" style="background-image: url(3.png); background-size: cover;">
+            <div style="height: 100px; display: flex; justify-content: center; align-items: center;">
+                <span>Multidiomas</span>
+            </div>
             <img src="mockup11.gif">
         </div>
-        <div class="modelo"  data-aos="fade-right" style="background: #263036; color: white">
-            <p>Administración y Control </p>
+        <div class="modelo"  data-aos="fade-right" style="background-image: url(4f.png); background-size: cover;">
+            <div style="height: 100px; display: flex; justify-content: center; align-items: center;">
+                <span>Administración y Control </span>
+            </div>
             <img src="mockup07.gif">
         </div>
     </section>
     <section class="video">
-        <h2 data-aos="zoom-out-down" class="title-video" style="display: flex; justify-content: center; align-items: center; font-size: 30px; text-align: center; width: 90%; margin: auto;">Descubre el Sistema de Carta Digital Más Completa , Versátil y Sencilla Del Mercado</h2>
+        <h2 data-aos="zoom-out-down" class="title-video" style="display: flex; justify-content: center; align-items: center; font-size: 30px; text-align: center; width: 90%; margin: auto;">La Carta Más Completa y Personalizada del Mercado </h2>
             <div class="box-video">
                 <video controls="no" id="video"  style="width: 90%; margin: 10px auto; max-width: 650px; display: flex; justify-content: center; align-items: center; box-shadow: 0px 0px 10px 6px #029097; opacity: 0;">
                 <source src="appcarta.mp4" type="video/mp4">
@@ -330,6 +370,14 @@
   AOS.init({
   	duraction: 1000,
   });
+
+  const primera = document.getElementById('primera');
+  const primeraBoton = document.getElementById('primera-boton');
+
+  primeraBoton.addEventListener('click', function(){
+    primera.scrollIntoView();
+  })
+
   const preguntas = document.getElementById('preguntas');
   const pregunta01 = document.getElementById('pregunta01');
   const buttom01 = document.getElementById('nombre');
