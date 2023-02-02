@@ -4,7 +4,7 @@ body {
     overflow-x: hidden;
 }
 
-header {
+/* header {
     min-height: 200px;
     background-image: url(fondolanding.png);
     background-size: cover;
@@ -15,6 +15,62 @@ header {
 
 header img {
     width: 100px;
+} */
+
+
+.encabezado{
+  height: 100vh;
+  background-image: url(fondoprincipal.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.encabezado h1{
+  color: white;
+  max-width: 550px;
+  text-align: center;
+  z-index: 1;
+}
+
+.encabezado .capa{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  background-color: rgba(0,0,0,.56);
+}
+
+.primera {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.primera-text{
+  width: 70%;
+  max-width: 450px;
+
+}
+
+.primera-image{
+  width: 20%;
+}
+
+.primera-boton{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.primera-boton img{
+  width: 100px;
+  cursor: pointer;
 }
 
 .oferta {
@@ -69,6 +125,13 @@ header img {
   font-size: 20px;
 
 }
+.modelos .modelo span{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px 6px white;
+}
 
 .modelos .modelo img {
     width: 200px;
@@ -77,7 +140,6 @@ header img {
 
 .modelo p{
   margin: 0;
-  padding-top: 60px;
 }
 
 .plan {
@@ -292,9 +354,170 @@ header img {
     padding: 10px;
   }
 
+
+/*  VALIDACIÓN */
+
+.formulario {
+  width: 100%;
+}
+
+.formulario__label {
+display: block;
+font-weight: 700;
+padding: 10px;
+cursor: pointer;
+}
+
+.formulario__grupo-input {
+position: relative;
+}
+
+.formulario__input {
+width: 80%;
+background: #fff;
+border: 3px solid transparent;
+border-radius: 3px;
+height: 45px;
+line-height: 45px;
+padding: 0 40px 0 10px;
+transition: .3s ease all;
+}
+
+.formulario__input:focus {
+border: 3px solid #0075FF;
+outline: none;
+box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+font-size: 12px;
+margin-bottom: 0;
+display: none;
+}
+
+.formulario__input-error-activo {
+display: block;
+}
+
+.formulario__validacion-estado {
+position: absolute;
+right: 10px;
+bottom: 15px;
+z-index: 100;
+font-size: 16px;
+opacity: 0;
+  margin-right: 20px;
+}
+
+.formulario__checkbox {
+margin-right: 10px;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+grid-column: span 2;
+}
+
+.formulario__mensaje {
+height: 45px;
+line-height: 45px;
+background: #F66060;
+padding: 0 15px;
+border-radius: 3px;
+display: none;
+}
+
+.formulario__mensaje-activo {
+display: block;
+}
+
+.formulario__mensaje p {
+margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.formulario__btn {
+font-size: 20px;
+  padding: 10px;
+  background: #6B145A;
+  color: white;
+  font-weight: 800;
+  border: 2px solid white;
+  font-family: "Varela Round";
+  cursor: pointer;
+  border-radius: 30px;
+transition: .1s ease all;
+}
+
+.formulario__btn:hover {
+background: orange;
+  color: black;
+  box-shadow: 0px 0px 10px 6px white;
+}
+
+.formulario__mensaje-exito {
+font-size: 14px;
+color: #119200;
+display: none;
+}
+
+.formulario__mensaje-exito-activo {
+display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+color: #1ed12d;
+opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+color: #bb2929;
+opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+border: 3px solid #bb2929;
+  width: 80%;
+}
+
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+.formulario {
+  grid-template-columns: 1fr;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+  grid-column: 1;
+}
+
+.formulario__btn {
+  width: 100%;
+}
+}
+
+/* FIN VALIDACION */
+
 @media (max-width: 850px) {
     .video .title-video{
       font-size: 20px!important;
+    }
+
+    .primera {
+      height: auto;
     }
 
   }
@@ -304,6 +527,7 @@ header img {
     .caja-beneficios span{
       font-size: 20px!important
     }
+
   }
 
   @media (max-width: 480px) {
@@ -316,10 +540,15 @@ header img {
       margin: 10px;
     }
 
-    /* .modelos img{
-        width: 90px!important;
-    } */
+    .primera {
+      height: auto;
+    }
+
     .modelo span{
       font-size: 16px;
     }
+
+    .encabezado{
+      background-image: url(storieprincipal.png)!important;
+      }
   }
